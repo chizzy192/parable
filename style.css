@@ -85,6 +85,7 @@ header {
     /* padding: 0.8rem; */
     border-bottom: 1px solid gray;
     background-color: white;
+    padding: 0.5rem 1rem;
 }
 
 .heading h3 {
