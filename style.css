@@ -13,6 +13,8 @@ body {
 main {
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .padding-global {
@@ -43,7 +45,6 @@ main {
     text-align: center;
     top: 9rem;
 }
-
 
 .bg-1-layer {
     z-index: 1;
