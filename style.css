@@ -13,8 +13,9 @@ body {
 main {
     position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 }
 
 .padding-global {
@@ -27,22 +28,27 @@ main {
     width: 100%;
     overflow: hidden;
     top: -2rem;
+    height: auto;
 }
-.background-container img {
+
+.background-container img{
     position: absolute;
     width: 100%;
-    height: 40rem;
     background-position: center center;
     background-size: contain;
-    
 }
+.background-container img:not(.white-card) {
+    height: 45rem;
+}
+
 
 .headFont {
     position: absolute;
+    font-size: 2rem;
     z-index: 5;
     color: rgba(255, 255, 255, 0.806);
     width: 100%;
-    text-align: center;
+    text-align: start;
     top: 9rem;
 }
 
@@ -59,13 +65,12 @@ main {
 
 .bg-4-layer {
     position: absolute;
-    height: 20rem;
     width:100%;
     z-index: 4;
-    top: 30rem;
-    opacity: 0.3;
-    border: 2px  rgb(255, 255, 255, 0.8);
-    box-shadow: -10px -10px 5px 5px rgba(255, 255, 255, 0.8);
+    top: 37rem;
+    opacity: 0.7;
+    border: 2px  rgb(255, 255, 255);
+    box-shadow: -20px -20px 15px 15px rgba(255, 255, 255);
 }
 
 header {
@@ -166,26 +171,49 @@ nav li:active {
     transition: transform 0.5s ease-in-out;
 }
 
+.article1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    z-index: 5;
+    top: 50rem;
+    color: blue;
+    gap: 1rem;
+}
+
+.headFontblue {
+    font-size: 2rem;
+    text-align: start;
+    color: blue;
+    line-height: 1.2;
+}
+
+.article1 p {
+    font: 0.7rem;
+    line-height: 1.2;
+}
+
 @media screen and (min-width: 31rem) {
     header {
         gap: 0;
-        height: auto; 
     }
     .heading {
         font-size: 0.8rem;
+        padding: 0.5rem 2rem;
     }
 
     .headFont {
         text-align: left;
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
-    .background-container img {
+    .background-container img:not(.white-card) {
         width: 100%;
+        height: 50rem;
     }
 
     .bg-4-layer {
-        top: 50rem;
+        top: 40rem;
     }
     
     nav .downBar {
@@ -195,7 +223,7 @@ nav li:active {
         justify-content: space-between;
         gap:1.5rem;
         font-size: 0.8rem;
-        padding: 0.5rem;
+        padding: 0.8rem 0;
     }
 
     nav li{
@@ -230,6 +258,24 @@ nav li:active {
         border-bottom: 1px solid grey;
         color: rgba(207, 203, 203, 0.582);
     }
+
+    .article1 {
+        position: absolute;
+        top: 55rem;
+        color: blue;
+        gap: 1rem;
+        padding: 4rem 2rem;
+    }
+
+    .headFontblue {
+        font-size: 2.5rem;
+        text-align: start;
+    }
+
+    .article1 p {
+        font: 2rem;
+        line-height: 1.5;
+    }
 }
 
 @media screen and (min-width: 60rem) {
@@ -256,11 +302,15 @@ nav li:active {
     .headFont {
         width: 60%;
         text-align: left;
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
-    .background-container img {
-        height: 60rem;
+    .background-container img:not(.white-card) {
+        height: 70rem;
+    }
+    .bg-4-layer {
+        top: 55rem;
+        height: auto;
     }
 
     nav  {
@@ -300,10 +350,6 @@ nav li:active {
 
     }
 
-    /* nav li:hover,nav li:active {
-        color: rgba(207, 203, 203, 0.582);
-    } */
-
     .hidden {
         display: none;
     }
@@ -323,6 +369,27 @@ nav li:active {
     nav li:first-child, nav li:last-child {
         text-align: center;
         margin: 0;
+    }
+    .article1 {
+        display: grid;
+        grid-template-columns: 25% 25%;
+        justify-content: center;
+        top: 70rem;
+        column-gap: 15rem;
+    }
+
+    .headFontblue {
+        grid-column: 1;
+        grid-row: 1/3;
+        font-size: 3.5rem;
+        text-align: start;
+        color: blue;
+        line-height: 1.2;
+    }
+
+    .article1 p {
+        font: 1.6rem;
+        line-height: 1.5;
     }
 }
 
