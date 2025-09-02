@@ -171,6 +171,13 @@ nav li:active {
     transition: transform 0.5s ease-in-out;
 }
 
+.white-card {
+    position: absolute;
+    width:100%;
+    z-index: 4;
+    top: 70rem;
+}
+
 .article1 {
     display: grid;
     grid-template-columns: 1fr;
@@ -179,6 +186,7 @@ nav li:active {
     top: 50rem;
     color: blue;
     gap: 1rem;
+    padding: 0 2rem 2rem;
 }
 
 .headFontblue {
@@ -193,10 +201,18 @@ nav li:active {
     line-height: 1.2;
 }
 
+.sectiontwo {
+    position: absolute;
+    width:100%;
+    z-index: 4;
+    top: 50rem;  
+}
+
 @media screen and (min-width: 31rem) {
     header {
         gap: 0;
     }
+    
     .heading {
         font-size: 0.8rem;
         padding: 0.5rem 2rem;
