@@ -427,7 +427,7 @@ ol li a {
     }
 
     .headFont {
-        width: 100%;
+        width: 80%;
         text-align: left;
         font-size: 3.5rem;
     }
@@ -503,7 +503,7 @@ ol li a {
     }
     .article1 {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 40%);
         justify-content: space-between;
         top: 75rem;
     }
