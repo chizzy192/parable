@@ -288,6 +288,15 @@ ol li a {
     gap: 2rem;
 }
 
+article .testimonial {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    z-index: 5;
+    top: 400rem;
+    gap: 2rem;
+}
 
 @media screen and (min-width: 31.5rem) {
     header {
@@ -692,4 +701,7 @@ ol li a {
         border-right: 2px solid var(--color);
     }  
 }
+
+
+
 

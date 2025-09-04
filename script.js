@@ -15,6 +15,34 @@ window.addEventListener('resize', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const showSideBar = document.getElementById('showSideBar');
+    const hiddenSideBar = document.getElementById('hiddenSideBar');
+        showSideBar.addEventListener('click', function showSideBar() {
+            if(showSideBar) {
+                this.classList.add('hiddenMenu');
+                downBar.style.display='flex';
+                hiddenSideBar.classList.remove('hiddenMenu');
+            } else {
+                showSideBar.classList.remove('hiddenMenu');
+                this.classList.add('hiddenMenu');
+                downBar.style.display='none';
+            }
+        });
+        hiddenSideBar.addEventListener('click', function hideSideBar() {
+            if(hiddenSideBar) {
+                showSideBar.classList.remove('hiddenMenu');
+                this.classList.add('hiddenMenu');
+                downBar.style.display='none';   
+            }else {
+                this.classList.add('hiddenMenu');
+                downBar.style.display='flex';
+                showSideBar.classList.remove('hiddenMenu')
+            }
+        });
+
+});
+
 function handleScreenChange(e) {
     if (e.matches) {
         window.onscroll = function () {
@@ -52,33 +80,7 @@ function handleScreenChange(e) {
 handleScreenChange({ matches: mediaQueryTab.matches });
 mediaTab.addEventListener('change', handleScreenChange);
 
-document.addEventListener('DOMContentLoaded', function() {
-    const showSideBar = document.getElementById('showSideBar');
-    const hiddenSideBar = document.getElementById('hiddenSideBar');
-        showSideBar.addEventListener('click', function showSideBar() {
-            if(showSideBar) {
-                this.classList.add('hiddenMenu');
-                downBar.style.display='flex';
-                hiddenSideBar.classList.remove('hiddenMenu');
-            } else {
-                showSideBar.classList.remove('hiddenMenu');
-                this.classList.add('hiddenMenu');
-                downBar.style.display='none';
-            }
-        });
-        hiddenSideBar.addEventListener('click', function hideSideBar() {
-            if(hiddenSideBar) {
-                showSideBar.classList.remove('hiddenMenu');
-                this.classList.add('hiddenMenu');
-                downBar.style.display='none';   
-            }else {
-                this.classList.add('hiddenMenu');
-                downBar.style.display='flex';
-                showSideBar.classList.remove('hiddenMenu')
-            }
-        });
 
-});
 
  
 
