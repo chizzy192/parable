@@ -3,7 +3,7 @@ const downBar = document.querySelector ('.downBar');
 const nav = document.getElementsByName('nav');
 
 window.addEventListener('resize', function () {
-    if (this.window.innerWidth >= 958) {
+    if (this.window.innerWidth >= 755) {
         downBar.style.display = "flex";
     } else {
         downBar.style.display = "none";

@@ -71,16 +71,6 @@ main {
     z-index: 3;
 }
 
-.bg-4-layer {
-    position: absolute;
-    width:100%;
-    z-index: 4;
-    top: 37rem;
-    opacity: 0.7;
-    border: 2px  rgb(255, 255, 255);
-    box-shadow: -20px -20px 15px 15px rgba(255, 255, 255);
-}
-
 header {
     width: 100%;
     height: 3rem;
@@ -103,7 +93,7 @@ header {
 }
 
 .heading h3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 nav {
@@ -112,9 +102,11 @@ nav {
 }
 
 .menu-button {
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
+    display: flex;
+    width: auto;
+    height: auto;
+    align-items: center;
 }
 
 .menu-button li {
@@ -127,6 +119,9 @@ nav {
 
 .menu {
     display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
 }
 
 nav li, nav a {
@@ -180,8 +175,10 @@ nav li:active {
 .white-card {
     position: absolute;
     width:100%;
+    height: 30rem;
     z-index: 4;
-    top: 70rem;
+    top: 45rem;
+    box-shadow: 1rem -6rem 7rem 6rem rgba(255, 255, 255, 0.936);
 }
 
 .article1 {
@@ -205,7 +202,7 @@ nav li:active {
     line-height: 1.2;
 }
 
-.sectiontwo {
+.sectiontwo, .sectiontwoimg1 {
     position: absolute;
     width:100%;
     z-index: 4;
@@ -291,18 +288,18 @@ ol li a {
 }
 
 
-@media screen and (min-width: 31rem) {
+@media screen and (min-width: 31.5rem) {
     header {
         gap: 0;
     }
     
     .heading {
-        height: 4rem;
-        font-size: 1rem;
+        height: 3rem;
+        /* font-size: 1.2rem; */
     }
 
-    .menu-button {
-        font-size: 1rem;
+    .menu-button li {
+        font-size: 2.5rem;
     }
 
     .headFont {
@@ -315,9 +312,10 @@ ol li a {
         height: 50rem;
     }
 
-    .bg-4-layer {
-        top: 40rem;
-    }
+    .white-card {
+        position: absolute;
+        top: 50rem;
+}
     
     nav .downBar {
         width: 100%;
@@ -400,21 +398,17 @@ ol li a {
         top: 390rem;
     }
     }
-
-@media screen and (min-width: 60rem) {
-    .padding-global{
-        padding: 0 13rem;
-    }
-
+    
+@media  screen and (min-width: 47.8rem) {
     header {
-        background-color: transparent;
+        background-color: white;
         width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        height: 1.8rem;
+        height: 3.3rem;
     }
+    
     .heading {
         display: inline-block;
         width: auto;
@@ -422,36 +416,46 @@ ol li a {
         border: none;
         font-size: 1.2rem;
         align-items: center;
-        color: rgb(197, 192, 192);
-        background-color: transparent;
+        color: var(--color);
+        padding-bottom: 0;
+        padding-top: 0;
     }
 
     .headFont {
-        width: 80%;
+        width: auto;
         text-align: left;
         font-size: 3.5rem;
     }
 
-    .headFontblue:not(.bluewidth) {
-        width: 40%;
+
+    .headFontblue {
+        width: 70%;
+        font-size: 3.5rem;
+        text-align: start;
+        line-height: 1.2;
     }
 
-    .background-container img:not(.white-card) {
-        height: 70rem;
+    .headFontblue:not(.bluewidth) {
+        width: 50%;
     }
+
+
+    .background-container img:not(.white-card) {
+        height: 60rem;
+    }
+
     .bg-4-layer {
-        top: 55rem;
+        top: 50rem;
         height: auto;
     }
 
     nav  {
-        justify-content: space-around;
+        justify-content: space-between;
         margin: 0;
-        padding-right: 12.5rem;
+        padding-right: 1.5rem;
         background-color: transparent;
         display: flex;
         align-items: center;
-        width: 55%;
     }
     nav .downBar {
         display: flex;
@@ -466,7 +470,7 @@ ol li a {
     }
 
     nav li {
-        width: 6rem;
+        width: auto;
         height: 1.8rem; 
         align-items: center;
         justify-content: center;
@@ -474,11 +478,15 @@ ol li a {
     }
 
     nav a {
-        color: rgb(197, 192, 192); 
-        width: 100%;
+        color: var(--color); 
+        width: auto;
         height: 1.8rem; 
         padding: 0.5rem;
+    }
 
+    .white-card {
+        position: absolute;
+        top: 60rem;
     }
 
     .hidden {
@@ -487,20 +495,131 @@ ol li a {
 
     .downBar {
         display: none;
-    }
+    }    
 
     .hiddenButtons {
         display: none;
-    }
-
-    .at-the-top {
-        background-color: transparent;
     }
 
     nav li:first-child, nav li:last-child {
         text-align: center;
         margin: 0;
     }
+    .article1 {
+        position: absolute;
+        top: 65rem;
+    }
+
+
+
+    .article1 p {
+        font: 1.6rem;
+        line-height: 1.5;
+    }
+
+    .sectiontwoimg1 {
+        position: absolute;
+        top: 58rem;
+    }
+    .article2 {
+        position: absolute;
+        top: 50rem; 
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        margin: 1rem 0;
+        
+    }
+
+    .card{
+        border-bottom: none;
+    }
+
+    .article2 .card:nth-child(10), .card:nth-child(11), .article3 .card:nth-child(8), .article3 .card:nth-child(7) {
+        border-bottom: 2px solid var(--color);
+    }
+
+    .card:nth-child(1), .card:nth-child(3), .card:nth-child(5), .card:nth-child(7), .card:nth-child(9) {
+       border-right: none;
+    }
+
+    .card {
+        height: 17rem;
+    }
+
+    .sectiontwoimg2 {
+        position: absolute;
+        top: 190rem; 
+    }
+
+    .article3 {
+        position: absolute;
+        top: 185rem;
+    }
+
+
+}
+
+@media screen and (min-width: 60rem) {
+    .padding-global{
+        padding: 0 10rem;
+    }
+
+    header {
+        background-color: transparent;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        align-items: center;
+        justify-content: space-between;
+        height: 3.3rem;
+    }
+
+    .headFont {
+        width: 80%;
+        text-align: left;
+        font-size: 3.5rem;
+    }
+
+    .heading {
+        display: inline-block;
+        width: auto;
+        padding-right: 0;
+        height: auto;
+        border: none;
+        font-size: 1.2rem;
+        align-items: center;
+        color: rgb(197, 192, 192);
+        background-color: transparent;
+    }
+
+    .background-container img:not(.white-card) {
+        height: 70rem;
+    }
+
+    .white-card {
+        position: absolute;
+        top: 70rem;
+    }
+
+    nav a {
+        color: rgb(197, 192, 192);
+    }
+
+    nav  {
+        padding-right: 9.5rem;
+        width: auto;
+    }
+
+    .at-the-top {
+        background-color: transparent;
+    }
+
+
     .article1 {
         display: grid;
         grid-template-columns: repeat(2, 40%);
@@ -511,9 +630,6 @@ ol li a {
     .headFontblue {
         grid-column: 1;
         grid-row: 1/3;
-        font-size: 3.5rem;
-        text-align: start;
-        line-height: 1.2;
     }
 
     .article1 p {
@@ -546,8 +662,17 @@ ol li a {
        border-right: none;
     }
 
+    .card:nth-child(3), .card:nth-child(9) {
+        border-right: 2px solid var(--color);
+    }
+
     .card {
         height: 17rem;
+    }
+
+    .sectiontwoimg1 {
+        position: absolute;
+        top: 52rem;
     }
 
     .sectiontwoimg2 {
