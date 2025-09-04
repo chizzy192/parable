@@ -296,7 +296,6 @@ ol li a {
     
     .heading {
         height: 3rem;
-        /* font-size: 1.2rem; */
     }
 
     .menu-button li {
@@ -365,7 +364,7 @@ ol li a {
         position: absolute;
         top: 55rem;
         gap: 1rem;
-        padding: 4rem 2rem;
+        padding: 6rem 2rem;
     }
 
     .headFontblue {
@@ -379,9 +378,9 @@ ol li a {
     }
 
     .article2 {
-    position: absolute;
-    top: 35rem;
-    /* padding: 0 2rem 2rem;  */
+        position: absolute;
+        top: 35rem;
+        padding: 6rem 2rem;
     }
 
      .card {
@@ -398,7 +397,7 @@ ol li a {
         position: absolute;
         top: 390rem;
     }
-    }
+}
     
 @media  screen and (min-width: 47.8rem) {
     header {
@@ -511,8 +510,6 @@ ol li a {
         top: 65rem;
     }
 
-
-
     .article1 p {
         font: 1.6rem;
         line-height: 1.5;
@@ -531,8 +528,7 @@ ol li a {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0;
-        margin: 1rem 0;
-        
+        margin: 1rem 0;    
     }
 
     .card{
@@ -560,8 +556,6 @@ ol li a {
         position: absolute;
         top: 185rem;
     }
-
-
 }
 
 @media screen and (min-width: 60rem) {
@@ -570,7 +564,6 @@ ol li a {
     }
 
     header {
-        background-color: transparent;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -578,6 +571,12 @@ ol li a {
         align-items: center;
         justify-content: space-between;
         height: 3.3rem;
+    }
+
+    .myHead {
+        background-color: transparent;
+        transition: background-color 200ms linear;
+        color: rgb(197, 192, 192);
     }
 
     .headFont {
@@ -595,7 +594,10 @@ ol li a {
         font-size: 1.2rem;
         align-items: center;
         color: rgb(197, 192, 192);
-        background-color: transparent;
+    }
+
+    nav a {
+        color: rgb(197, 192, 192);
     }
 
     .background-container img:not(.white-card) {
@@ -607,25 +609,21 @@ ol li a {
         top: 70rem;
     }
 
-    nav a {
-        color: rgb(197, 192, 192);
-    }
-
     nav  {
         padding-right: 9.5rem;
         width: auto;
     }
 
-    .at-the-top {
+    .downBar {
         background-color: transparent;
     }
-
 
     .article1 {
         display: grid;
         grid-template-columns: repeat(2, 40%);
         justify-content: space-between;
         top: 75rem;
+        padding-top: 6rem;
     }
 
     .headFontblue {
@@ -641,14 +639,14 @@ ol li a {
     .article2 {
         position: absolute;
         top: 52rem; 
+        padding-top: 6rem;
     }
 
     .card-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0;
-        margin: 1rem 0;
-        
+        margin: 1rem 0;  
     }
 
     .card{
