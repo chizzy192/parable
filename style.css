@@ -187,8 +187,8 @@ nav li:active {
     position: absolute;
     z-index: 5;
     top: 50rem;
-    gap: 1rem;
-    padding: 0 2rem 2rem;
+    gap: 2rem;
+    padding: 3rem 2rem;
 }
 
 .headFontblue {
@@ -209,6 +209,9 @@ nav li:active {
     top: 50rem; 
 }
 
+.sectiontwo {
+
+}
 .article2 {
     width: 100%;
     display: grid;
@@ -216,7 +219,8 @@ nav li:active {
     position: absolute;
     z-index: 5;
     top: 30rem;
-    gap: 1rem;
+    gap: 2rem;
+    padding: 3rem 2rem;
 }
 
 .card {
@@ -284,7 +288,7 @@ ol li a {
     position: absolute;
     z-index: 5;
     top: 287rem;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 
