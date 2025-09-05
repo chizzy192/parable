@@ -6,9 +6,34 @@ const headingTop = document.getElementById('headingTop');
 const navLinks = document.querySelectorAll('nav a');
 const mediaTab = '(min-width: 958px)';
 const mediaQueryTab = window.matchMedia(mediaTab);
+// const previousBtn = document.querySelector('.previous');
+// const nextBtn = document.querySelector('.next');
+// const carousel = document.querySelector('.carousel');
+// const slides = Array.from(carousel.children);
+
+// const slideWidth = slides[0].getBoundingClientRect().width;
+
+// const setSlidePosition = (slide, index) => {
+//     slide.style.left = slideWidth * index + 'px';
+// };
+
+// slides.forEach(setSlidePosition);
+
+// nextBtn.addEventListener('click', e => {
+//     const currentSlide = carousel.querySelector(".current-slide");
+//     console.log(currentSlide);
+//     const nextSlide = currentSlide.nextElementSibling;
+//     console.log(nextSlide);
+//     const amountToMove = nextSlide.style.left;
+//     carousel.style.transform = 'translateX(' + amountToMove + ')';
+//     console.log(amountToMove);
+//     currentSlide.classList.remove('current-slide');
+//     nextSlide.classList.add('current-slide');
+// })
+
 
 window.addEventListener('resize', function () {
-    if (this.window.innerWidth >= 755) {
+    if (this.window.innerWidth >= 755 +'px') {
         downBar.style.display = "flex";
     } else {
         downBar.style.display = "none";

@@ -43,6 +43,7 @@ main {
     width: 100%;
     background-position: center center;
     background-size: contain;
+    object-fit: cover;
 }
 
 .background-container img:not(.white-card) {
@@ -230,12 +231,12 @@ nav li:active {
     border-bottom: none;
 }
 
-ol>li, ol li a {
+.sectiontwo ol>li,.sectiontwo ol li a {
     list-style: none;
     text-decoration: none;
 }
 
-ol li a {
+.sectiontwo ol li a {
     height: 100%;
     width: 100%;
     display: flex;
@@ -288,14 +289,100 @@ ol li a {
     gap: 2rem;
 }
 
-article .testimonial {
+.sectionthree {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     position: absolute;
     z-index: 5;
-    top: 400rem;
+    top: 524.5rem;
     gap: 2rem;
+    color: var(--color);
+}
+
+.testimonial {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-icon {
+    width: 12rem;
+    height: 8rem;
+    justify-self: center;
+}
+
+.quote-card {
+    flex: 0 0 100%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; 
+}
+
+.quote-text, .quote-card ul {
+    font-weight: 600;
+}
+
+.quote-author {
+    text-transform: uppercase;
+}
+
+.quote-text ul {
+    padding: 0 1rem;
+}
+
+.quote-text li{
+    list-style: none;
+    text-decoration: none;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel {
+    margin: 3rem auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    transition: transform 250ms ease-in;
+}
+
+.carousel-button {
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+.carousel-container button {
+    border: none;
+    background-color: var(--color);
+    font-family: consolas;
+    font-size: 4rem;
+    color: white;
+    height: 5rem;
+    width: 5rem;
+    cursor: pointer;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 31.5rem) {
@@ -393,19 +480,36 @@ article .testimonial {
     }
 
      .card {
-    width: 100%;
-    height: 30rem;
+        width: 100%;
+        height: 24rem;
     }
 
     .sectiontwoimg2 {
-    position: absolute;
-    top: 420rem;
+        position: absolute;
+        top: 340rem;
     }
 
     .article3 {
         position: absolute;
-        top: 390rem;
+        top: 325rem;
     }
+
+    .sectionthree {
+        position: absolute;
+        z-index: 5;
+        top: 585rem;
+    }
+
+    .quote-text, .quote-card ul {
+        font-weight: 600;
+        margin: auto;
+        align-items: center;
+    }
+
+    .quote-card {
+        line-height: 2;
+    }
+
 }
     
 @media  screen and (min-width: 47.8rem) {
@@ -565,6 +669,28 @@ article .testimonial {
         position: absolute;
         top: 185rem;
     }
+
+    .sectionthree {
+        position: absolute;
+        z-index: 5;
+        top: 330rem;
+    }
+
+    .quote-text, .quote-card ul {
+        font-weight: 600;
+        font-size: 1.5rem;
+        width:95%;
+        margin: auto;
+        align-items: center;
+    }
+
+    .quote-card {
+        line-height: 2;
+    }
+
+    .quote-author {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (min-width: 60rem) {
@@ -700,6 +826,28 @@ article .testimonial {
     .article3:last-child{
         border-right: 2px solid var(--color);
     }  
+
+    .sectionthree {
+        position: absolute;
+        z-index: 5;
+        top: 285rem;
+    }
+
+    .quote-text, .quote-card ul {
+        font-weight: 600;
+        font-size: 1.2rem;
+        width:90%;
+        margin: auto;
+        align-items: center;
+    }
+
+    .quote-card {
+        line-height: 1.5;
+    }
+
+    .quote-author {
+        font-size: 1rem;
+    }
 }
 
 
