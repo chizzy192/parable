@@ -6,31 +6,41 @@ const headingTop = document.getElementById('headingTop');
 const navLinks = document.querySelectorAll('nav a');
 const mediaTab = '(min-width: 958px)';
 const mediaQueryTab = window.matchMedia(mediaTab);
-// const previousBtn = document.querySelector('.previous');
-// const nextBtn = document.querySelector('.next');
-// const carousel = document.querySelector('.carousel');
-// const slides = Array.from(carousel.children);
 
-// const slideWidth = slides[0].getBoundingClientRect().width;
-
-// const setSlidePosition = (slide, index) => {
-//     slide.style.left = slideWidth * index + 'px';
-// };
-
-// slides.forEach(setSlidePosition);
-
-// nextBtn.addEventListener('click', e => {
-//     const currentSlide = carousel.querySelector(".current-slide");
-//     console.log(currentSlide);
-//     const nextSlide = currentSlide.nextElementSibling;
-//     console.log(nextSlide);
-//     const amountToMove = nextSlide.style.left;
-//     carousel.style.transform = 'translateX(' + amountToMove + ')';
-//     console.log(amountToMove);
-//     currentSlide.classList.remove('current-slide');
-//     nextSlide.classList.add('current-slide');
-// })
-
+function handleScreenChange(e) {
+    if (e.matches) {
+        window.onscroll = function () {
+            if(document.body.scrollTop >= 20 || document.documentElement.scrollTop >=20) {
+                myHeader.classList.remove('myHead');
+                headingTop.style.color = 'rgb(92, 92, 223)';
+                navLinks.forEach(a => {
+                    a.style.color = 'rgb(92, 92, 223)';
+                });
+            } else {
+                myHeader.classList.add('myHead');
+                headingTop.style.color = 'rgb(197, 192, 192)';
+                navLinks.forEach(a => {
+                    a.style.color = 'rgb(197, 192, 192)';
+                });
+            }}
+        } else {
+            window.onscroll = function () {
+                if(document.body.scrollTop == 0 || document.documentElement.scrollTop == 0) {
+                    myHeader.classList.remove('myHead');
+                    headingTop.style.color = 'rgb(92, 92, 223)';
+                    navLinks.forEach(a => {
+                        a.style.color = 'rgb(92, 92, 223)';
+                    });
+                } else {
+                    myHeader.classList.remove('myHead');
+                    headingTop.style.color = 'rgb(92, 92, 223)';
+                    navLinks.forEach(a => {
+                        a.style.color = 'rgb(92, 92, 223)';
+                    });
+                }
+            };
+    }
+}
 
 window.addEventListener('resize', function () {
     if (this.window.innerWidth >= 755 +'px') {
@@ -68,43 +78,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-function handleScreenChange(e) {
-    if (e.matches) {
-        window.onscroll = function () {
-            if(document.body.scrollTop >= 100 || document.documentElement.scrollTop >=100) {
-                myHeader.classList.remove('myHead');
-                headingTop.style.color = 'rgb(92, 92, 223)';
-                navLinks.forEach(a => {
-                    a.style.color = 'rgb(92, 92, 223)';
-                });
-            } else {
-                myHeader.classList.add('myHead');
-                headingTop.style.color = 'rgb(197, 192, 192)';
-                navLinks.forEach(a => {
-                    a.style.color = 'rgb(197, 192, 192)';
-                });
-            }}
-        } else {
-            window.onscroll = function () {
-                if(document.body.scrollTop == 0 || document.documentElement.scrollTop == 0) {
-                    myHeader.classList.remove('myHead');
-                    headingTop.style.color = 'rgb(92, 92, 223)';
-                    navLinks.forEach(a => {
-                        a.style.color = 'rgb(92, 92, 223)';
-                    });
-                } else {
-                    myHeader.classList.remove('myHead');
-                    headingTop.style.color = 'rgb(92, 92, 223)';
-                    navLinks.forEach(a => {
-                        a.style.color = 'rgb(92, 92, 223)';
-                    });
-                }
-            };
-    }
-}
+
 handleScreenChange({ matches: mediaQueryTab.matches });
 mediaTab.addEventListener('change', handleScreenChange);
 
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.carousel-wrapper');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const offset = -currentIndex * slides[0].offsetWidth;
+    wrapper.style.transform = `translateX(${offset}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  });
+});
 
 
  
