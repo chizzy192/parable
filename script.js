@@ -7,6 +7,30 @@ const navLinks = document.querySelectorAll('nav a');
 const mediaTab = '(min-width: 958px)';
 const mediaQueryTab = window.matchMedia(mediaTab);
 
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.carousel-wrapper');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const offset = -currentIndex * slides[0].offsetWidth;
+    wrapper.style.transform = `translateX(${offset}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  });
+});
+
 function handleScreenChange(e) {
     if (e.matches) {
         window.onscroll = function () {
@@ -40,7 +64,7 @@ function handleScreenChange(e) {
                 }
             };
     }
-}
+};
 
 window.addEventListener('resize', function () {
     if (this.window.innerWidth >= 755 +'px') {
@@ -78,33 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
 handleScreenChange({ matches: mediaQueryTab.matches });
 mediaTab.addEventListener('change', handleScreenChange);
-
-document.addEventListener('DOMContentLoaded', () => {
-  const wrapper = document.querySelector('.carousel-wrapper');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-  const slides = document.querySelectorAll('.carousel-slide');
-  const totalSlides = slides.length;
-  let currentIndex = 0;
-
-  function updateCarousel() {
-    const offset = -currentIndex * slides[0].offsetWidth;
-    wrapper.style.transform = `translateX(${offset}px)`;
-  }
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-  });
-});
 
 
  
